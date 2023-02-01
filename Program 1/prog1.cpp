@@ -28,12 +28,16 @@ int main() {
 	status = pipe(proc);
 	int pid1 = fork();
 
-	if (pid1 == 0) {
-		int pid2 = fork();
-		if (pid2 == 0) iter(1);
-	}
+	for (int i = 0; i < 3; i++) {
 
-	else rec(1);
+		if (pid1 == 0) {
+			int pid2 = fork();
+			if (pid2 == 0) iter(1);
+		}
+
+		else rec(1);
+
+	}
 
 	wait(&status);
 	wait(&status);
