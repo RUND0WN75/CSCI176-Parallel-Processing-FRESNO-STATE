@@ -37,6 +37,4 @@ int main() {
 
 	wait(&status);
 	wait(&status);
-
-	//This is a comment
 }
