@@ -37,8 +37,4 @@ int main() {
 
 	wait(&status);
 	wait(&status);
-
-	cout << "Hello world\n"; //LATEST CHANGE FOR TESTING PURPOSES
-
-	//wertyuio
 }
