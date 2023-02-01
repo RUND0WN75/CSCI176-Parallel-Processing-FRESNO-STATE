@@ -26,21 +26,26 @@ vector<int> proc(2); //Process A and B
 int main() {
 	int status;
 	status = pipe(proc);
-	int pid1 = fork();
 
 	for (int i = 0; i < 3; i++) {
 
+		int pid1 = fork(), pid2 = fork(), pid3 = fork();
+
 		if (pid1 == 0) {
-			int pid2 = fork();
-			if (pid2 == 0) iter(1);
+			rec(1);
 		}
 
-		else rec(1);
+		else if (pid2 == 0) {
+			iter(1);
+		}
+
+		else if (pid3 == 0) {
+			rec(1);
+		}
 
 	}
 
 	wait(&status);
 	wait(&status);
-
-	//Comment
+	wait(&status);
 }
