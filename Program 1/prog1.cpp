@@ -32,7 +32,7 @@ int main() {
 		int pid1 = fork(), pid2 = fork(), pid3 = fork();
 
 		if (pid1 == 0) {
-			rec(1);
+			//do stuff
 		}
 
 		else if (pid2 == 0) {
@@ -42,7 +42,6 @@ int main() {
 		else if (pid3 == 0) {
 			rec(1);
 		}
-
 	}
 
 	wait(&status);
