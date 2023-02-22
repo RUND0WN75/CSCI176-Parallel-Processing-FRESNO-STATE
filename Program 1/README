@@ -1,3 +1,26 @@
-More info is found in "instructions.txt"
+Practice for task-parallel programming with message-passing communication among multiple 
+processes using Unix pipe:
 
-C++ program is labeled "prog1.cpp"
+Study the attached sample program in which two child processes communicate via Unix pipes
+(message passing), and write a task-parallel program for the following mission.
+
+We plan to compare the efficiencies of two different implementations of the Fibonacci number
+generation function, i.e., recursive version vs. iterative version.
+
+Instead of conducting a serial testing in which the two versions of the Fibonacci number generation functions are executed serially in a process, we plan to test them in parallel with multiple processes.
+
+Your program should be based on the SPMD task-parallel model and include 4 processes 
+(1 parent and 3 child processes). Upon execution, a numeric value N (for Nth Fibo#) is accessed from the command line argument 
+and the parent process creates needed pipes and forks three child processes.
+
+The first child process is responsible for the control, i.e., sending a number (N) to both the second and the third child processes, receiving results (execution time taken) from those two child processes, and displaying them.
+
+The second child process is responsible for executing the recursive version of the Fibonacci 
+function upon receiving the number N, displaying the result (Nth Fibonacci #), and sending the execution time taken to the first child process (controller).
+
+Analogously, the third child process is responsible for executing the iterative version of the Fibonacci function upon receiving the number N, displaying the result (Nth Fibonacci #), and sending the execution time taken to the first child process (controller).
+
+For the execution time checking, you should include codes for time checking (any method is OK) in the 2nd and 3rd child processes, i.e., inserting a wall-clock time checking code right before the Fibonacci function call and right after the function call. 
+
+All communications should be done in the message-passing way using Unix pipes. It is the 
+programmer’s job to define and use appropriate number/kind of pipes.
