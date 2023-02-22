@@ -1,1 +1,31 @@
+Practice for parallel programming with Java Threads.
+Task: Write a Java Threads code for the parallel global sum computation.
 
+Complete the code with:
+ in the main class, 
+ (1) declare a global array of integers [500,000,000] and initialize it with value i+1 each;
+ (2) get a command-line arg for the total number of threads and create computing threads;
+ 
+ in the computing_thread class,
+ (1) calculate my_first_index and my_last_index to access the global array;
+ (2) compute local_sum – this is a serial operation in each thread;
+ (3) using the shared_object’s synchronized method, update the global_sum (shared-mem);
+ 
+ in the shared_object class,
+(1) include a mechanism to display the final global_sum upon completing the last 
+computing thread’s global_sum update;
+
+Run the completed code with the number of computing threads 1, 2, 3, 4, 5, 6, 7, 8.
+
+Finally, include the time checking code and compare the run time with different number of threads. Please exclude the data array initialization time.
+
+Parallel programming with Java Threads
+• Multithreading
+ define a (or more) class(s) as thread(s);
+ create and run thread objects;
+• Communication/Synchronization
+ Shared var communication
+ Monitor concept (with single condition code): mutual exclusion is implicit
+ To implement shared-var(data) communication, create a shared-data class and make each method (touching the shared data) ‘synchronized’.
+ To actually share a variable(data), create an instance (object) of the shared-data class and make it accessible from the threads; e.g., pass the shared object as a parameter to the constructor of each thread.
+ Within a synchronized method, a thread can suspend itself by calling the predefined method ‘wait()’ and the blocked thread can be unblocked by other thread’s ‘notify()’ call;
