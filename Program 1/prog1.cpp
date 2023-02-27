@@ -1,10 +1,4 @@
 /*
-File: prog1.cpp
-
-Name: Craig Walkup
-
-Class: CSCI 176 Parallel Processing
-
 Assignment abstract: an assignment demonstrating task-parallel programming through a Unix-pipe utilizing the message-passing communication mechanism. 
 This parallel programming method is tested using 3 fibonacci numbers. 
 The goal of this program is to compare parallel execution times of the recursive and iterative versions of the fibonacci series using the SPMD task-parallel model. 
