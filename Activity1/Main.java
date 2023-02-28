@@ -1,10 +1,4 @@
 /*
-File: Main.java
-
-Name: Craig Walkup
-
-Class: CSCI 176 Parallel Processing
-
 Assignment abstract:
 
 The program can be executed with the following command:
