@@ -1,10 +1,4 @@
 /*
-File: Main.java
-
-Name: Craig Walkup
-
-Class: CSCI 176 Parallel Processing
-
 Assignment abstract: an assignment meant to demonstrate parallel programming using Java threads. Using the local sum
 and global sum concepts, threads are utilized to perform some amount of separate work to compute
 the sums. The main emphasis of the implementation is through shared-variable (data) communication.
