@@ -1,8 +1,4 @@
 /*
-Name: Craig Walkup
-
-Class: CSCI 176 Parallel Processing
-
 Assignment abstract: an assignment demonstrating shared-memory programming using the Pthreads library. 
 The main focus of this program is to compute various prefix sums using an array of prefix sum variables. 
 
