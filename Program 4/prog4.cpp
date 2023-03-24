@@ -1,6 +1,4 @@
 /*
-Name: Craig Walkup
-
 Class: CSCI 176 Parallel Processing
 
 Assignment abstract: 
