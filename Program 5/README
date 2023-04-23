@@ -1,0 +1,18 @@
+Parallel merge sort with MPI.
+Do the programming assignment #3.8 in pp. 148 of the basic textbook, i.e.,
+
+“Parallel merge sort starts with n/comm_sz keys assigned to each process. It ends with all the keys stored on process 0 in sorted order. To achieve this, it uses the same tree-structured communication that we used to implement a global sum. However, when a process receives another process’s keys, it merges the new keys into its already sorted list of keys. Write a program that implements parallel merge sort. 
+
+Process 0 should read in n and broadcast it to the other processes. Each process should use a random number generator to create a local list of n/comm_sz ints. Each process should then sort its local list, and process 0 should gather and print the local lists. Then the processes should use tree-structured communication to merge the global list onto process 0, which prints the result.”
+
+Programming guide:
+1. Process_0 accesses command line argument for n (total number of elements in the list), and broadcast it to all other processes;
+2. Each process creates a dynamic array of integers with n/p elements, and fills it with random integer numbers; for the random numbers, please generate each number less than 100;
+3. Each process displays local list (unsorted);
+4. Each process performs qsort (GNU library quicksort) to sort the local list in the ascending order;
+ please study any Internet sources for the usage of the qsort(..), if you haven’t used it so far;
+ Note: please do not use the ridiculous recursion based approach for sorting the local list;
+5. Each process displays local list (sorted);
+6. Implement the tree-reduction for the merging operation, i.e., merging locally sorted lists into one; you should use the method developed for HW1(#3), i.e., determining partner and send/receive, etc.; receiving processes should perform the merging operation and yield double-length merged lists;
+7. Finally, process_0 produces the global sorted list and displays it.
+8. Please check and display the parallel execution time.
